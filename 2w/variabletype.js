@@ -191,6 +191,11 @@ console.log(pellie.name)
 // 그리고 primitype 변수의 메모리저장과  object 타입의 메모리 저장방식은 틀리다.
 // 즉 primitive는 직접 메모리에 저정하지만
 // object는 내용이 크므로 참조에 참조로해서 저장이 된다. c에서의 포인터를 생각하면 되겠다.
-
-
+// 그래서 
+// Immutable data type 에는  primitive types, forozen objects등이 있을수 있다
+// 즉 primitive type은 만약 값이 'school'이라는 값 자체가 하나의 값이지 이중 특정 문자 c등을 교체할수 없다는 말이다.
+// 당연하지 변수 자체가 하나의 값으로 해서 메모리에 할당된다는 것이다.
+// 하지만 
+// mutable 인  object 타입은 속의 특정한 변수에 대한 값을 바꿀수가 있다 즉 a.name = 'ssss' 이런식으로 변경이 가능하다는 말이다.
+// 배열도 mutable 타입이다.
 
