@@ -81,6 +81,7 @@ function printAllBE(...args){
     for(const arg of args){  // 이런 형태로도 사용가능 하다. 즉 모든 args의 배열인자값을 arg에 할당한다.
         console.log(arg)
     }
+    return undefined; // 이 부분이 생략된것이나 마찬가지아디.
 }
 
 function printAllCE(...args){ 
@@ -97,5 +98,59 @@ printAllBE('dream', 'coding', 'ellie', 'aaaaa');
 printAllCE('dream', 'coding', 'ellie', 'aaaaa');
 
 
+//------------------------------------------------------------------------------------
 // 자스크크립터에서 함수들은 일정의 object 타입이다.
 printAll.log
+
+
+//------------------------------------------------------------------------------------
+// 6. 함수에서의 리턴
+
+function sum(a, b){
+    return a + b;
+}
+
+const result = sum(1, 3);
+console.log(result);
+
+
+//------------------------------------------------------------------------------------
+// 7. 함수에서의 리턴의 경우에는 맞는 조건을 먼저 검증하고 난이후 실제 할일을 하는 것이 좋다.
+//    즉 리턴할 것은 빨리하고 실제 로직은 나중에 한다. 리소스 절약
+function upgradeUser(user){
+    if( user.point <= 10 ){
+        return;
+    }
+
+    // do anything
+
+    // do anything
+
+    // ....
+}
+
+//------------------------------------------------------------------------------------
+// 8.함수에서 First-class function이라는 말이 무슨 말인가하면
+// 먼저 함수 function은 특정 변수에 할당이 가능하다는 말이다.
+// 또한 함수는 특정 함수에 인자로 전달가능하고
+// 또한 함수의 리턴값으로도 사용가능하다는 말이다.
+
+
+const print = function () {   // function 함수를 print 변수에 할당했다.
+                              // 이렇게 함수에 이름이 없는 함수를 anonymous function이라 한다.
+                              // 이렇게 함수의 이름도 없이 필요한 부분만 선언해서 사용도 가능하다.
+    console.log('print function is called');
+}
+
+print();
+
+const printAgain = print;
+printAgain();
+
+const sumAgain = sum;
+console.log(sumAgain(1,3));
+
+
+
+
+
