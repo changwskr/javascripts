@@ -150,7 +150,62 @@ printAgain();
 const sumAgain = sum;
 console.log(sumAgain(1,3));
 
+//------------------------------------------------------------------------------------
+// 9. callback 함수
+// 콜백함수는 함수를 인자로 전달해서 현재의 조건이 맞으면 각각의 함수를 호출해서 사용하는 것을 말한다.
+function randomQuiz(answer, printYes, printNo){
+    if( answer === 'love you'){
+        printYes();
+    }
+    else{
+        printNo();
+    }
+}
 
+const printYes = function() { // ananyomous function
+                            // 디버깅할 때 함수명이 없어서 어렵다.
+    console.log('Yes~');
+}
+const printNo = function print() { // named function
+                                   // 그럼 왜 이렇게 이름을 사용할까, 우리가 디버깅을 할때 어떤함수에서 실행했는지를 알려면 함수명을 지정하는 것이 좋다.
+    console.log('No');
+}
+
+randomQuiz('wrong',printYes,printNo);
+
+//------------------------------------------------------------------------------------
+// 10. arrow function
+// function을 정의시 {} 부터 많을 정의해야 되는 데 이것들을 합쳐놓은 것이다.
+const simplePrint = function() {
+    console.log('simplePrint');
+}
+
+// =>
+const simplePrint2 = () => console.log('simplePrint'); // arrow function 형태로 변형
+
+
+// 세가지 예는 다 같은 기능을 한다.
+const add = () => a + b;
+
+const add1 = () => {
+    return a + b;
+}
+
+const add2 = function() {
+    return a + b;
+}
+
+//------------------------------------------------------------------------------------
+// 함수를 선언함과 동시에 호출하고 싶은 경우 사용하는 것이 IIFE이다.
+function hello() {
+    console.log('IIFE No');
+}
+
+hello();
+
+(function helloRightNow() {
+    console.log('IIFE');
+})()
 
 
 
