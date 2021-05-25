@@ -110,5 +110,39 @@ console.log(fruits);
 fruits.splice(1,1,'apple','melon'); // 1번 인덱스 부터 1개를 제거한다. 이후 사과와 레몬을 집어넣어줘
 console.log(fruits); 
 
+// 배열서로 연결 : concat
+const fruits2 = ['aaa', 'bbb'];
+const fruits3 = ['CCC', 'DDD'];
+// concat(...items: ConcatArray<T>[]): T[];
+// concat 함수는 여러개의 인자(여기서 인자는 배열타입이다)를 받을 수 있다. 그리고 리턴은 T[] 배열을 리턴하고 있다.
+
+let newFruits = fruits.concat(fruits2);
+console.log(newFruits);
+
+console.log('----2ro')
+newFruits = fruits.concat(fruits2,fruits3);
+console.log(newFruits);
+
+// 5. Searching
+// 배열속의 값이 몇번째 인덱스 인지 알고 싶을때 : indexOf
+console.clear();
+console.log(fruits);
+console.log(fruits.indexOf('apple'));
+console.log(fruits.indexOf('apple'));
+console.log(fruits.indexOf('coconut'));
+
+// 배열속의 값이 존재하는지 아닌지 점검하고자 할때 : includes
+console.log(fruits.includes('apple'));
+console.log(fruits.includes('coconut'));
+
+// 배열속의 같은 값이 몇개 존재하는 지 확인할때 : lastIndexOf
+// lastIndexOf는 현재 배열의 마지막의 index를 리턴한다. 몇개있는 지는 알수 없다.
+console.clear();
+console.log(fruits);
+fruits.push('apple');
+console.log(fruits);
+console.log(fruits.indexOf('apple'));
+console.log(fruits.lastIndexOf('apple'));
+
 
 
