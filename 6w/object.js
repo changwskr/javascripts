@@ -109,9 +109,6 @@ function Person(name , age){
     // return this; // 생략
 }
 
-// 5. Fun cloning
-
-
 // 상위처럼 makePerson을 사용하지 않고
 // class 처럼 Person을 함수형태로 정의하면서 class 처럼 선언해서 오브젝트를 생성할 수도 있다.
 // 그래서 이것을 contructor function이라고 한다.
@@ -148,4 +145,37 @@ console.log("----------------------")
 for ( const value of array ){
     console.log(value);
 }
+
+
+// 5. Fun cloning
+// object assign
+const user = {name : 'elle', age : 10};
+const user2 = user; // user2는 user가 참조하고 있는 객체의 참조값을 가르키고 있다.
+
+user2.name = 'roian';
+console.log(user);
+
+// 옛날에 하나의 오브젝트 복제본을 만드는 방법
+const user3 = {};
+for(const key in user) {
+  user3[key] = user[key];  
+}
+console.clear();
+console.log(user3);
+
+// 신규 방식
+// Object의 assign을 사용한다.
+console.log('----new')
+const user4 = {};
+Object.assign(user4,user3);
+console.log(user4);
+
+const user5 = Object.assign({},user3);
+console.log(user5);
+
+// another sample
+const fruit1 = {color:'red'};
+const fruit2 = {color:'blue', size:'big', yymmdd : '000112'}
+const fruit3 = Object.assign({},fruit1,fruit2); //같은 멤버는 머지하여 준다.
+console.log(fruit3);
 
