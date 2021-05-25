@@ -48,3 +48,67 @@ const obj3 = {
 obj3.hasJob = true;
 delete obj3.age;
 
+// 자 결론적으로 object는 key와 value의 집합체라는 것이다.
+// 함수는 없다는 말이다.
+
+
+//----------------------------------------
+// 2. Computed properties
+// 오브젝트의 멤버를 접할할 때는 두가지 접근 방식을 취할수 있다.
+
+const person2 = {name : 'sunyee', age : 4};
+console.log(person2.name)
+console.log(person2['name']); //배열처럼 선언해서 가져올수 도 있다. 주의할 점은 멤버는 반드시 스트링타입으로 정의해야 된다는 것이다.
+person2['hasJob'] = true; // 이렇게 재정의도 가능하다.
+
+// 이런 person2['name'] 이런 형태는 언제 많이 사용하는냐하면
+// 동적으로 키를 받아와야 될 상황이면 사용한다.
+function printValue(obj, key){
+    console.log('--'+ obj[key])
+    return obj[key];
+}
+const rtn = printValue(person2,'name')
+console.log(rtn);
+
+const rtn2 = printValue(person2,'age');
+console.log(rtn2);
+
+// 자바스크립터에서 최초에 할당된 변수타입을 바꿀수가 없나
+// 그래서 우리는 let을 사용한다.
+// const는 상수를 정의하는 변수이다.
+let rtn4 = '1111';
+rtn4 = '1111111';
+console.log(rtn4);
+
+//---------------------------------
+// 3. Property value shorthand
+let person11 = {name : 'bob', age : 2};
+let person12 = {name : 'gallen', age : 3};
+let person13 = {name : 'tank', age : 4};
+let person14 = makePerson('uuu',10);
+person14.age = 22;
+
+console.log(person14.namem + ' ' + person14.age);
+console.log(person14);
+
+function makePerson(name, age){
+    return {
+        name : name, age : age
+    }
+    // 간단히 이렇게도 가능하다
+    // return { name, age}
+}
+
+
+// 4. Constructor function을 이용한 객체생성
+let person15 = new Person('aaaa',10);
+function Person(name , age){
+    // this = {}; // 생략
+    this.name = name;
+    this.age = age;
+    // return this; // 생략
+}
+
+// 상위처럼 makePerson을 사용하지 않고
+// class 처럼 Person을 함수형태로 정의하면서 class 처럼 선언해서 오브젝트를 생성할 수도 있다.
+// 그래서 이것을 contructor function이라고 한다.
