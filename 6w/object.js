@@ -109,6 +109,43 @@ function Person(name , age){
     // return this; // 생략
 }
 
+// 5. Fun cloning
+
+
 // 상위처럼 makePerson을 사용하지 않고
 // class 처럼 Person을 함수형태로 정의하면서 class 처럼 선언해서 오브젝트를 생성할 수도 있다.
 // 그래서 이것을 contructor function이라고 한다.
+
+//-------------------------------------------------
+// 5. in operator : 해당 오브젝트안에 키가 있는지 없는지 체킹하는 것이다.
+let person16 = new Person16('aaaa',10);
+function Person16(name , age){
+    // this = {}; // 생략
+    this.name = name;
+    this.age = age;
+    // return this; // 생략
+}
+console.log('name' in person16);
+console.log('age' in person16);
+console.log('random' in person16);
+
+//-------------------------------------------------
+// 6. for..in va for..of
+// 오브젝트가 순차적으로 할당되는 구조이다.
+// for (key in obj)
+for ( const key in person16){ // 이렇게 선언되어 있으면 person16 안의 key인 name과 age가 순차적으로 할당된다.
+   console.log(key);
+}
+
+// for (value of interable) 순차적인 배열구조를 가진 타입에 사용한다.
+const array = [ 1, 2, 3, 4, 5];
+for (let ii = 0; ii < array.length; ii++){
+    console.log(array[ii]);
+}
+
+// 이런 형식을 간단히 value of array를 이용해서 간단하게 할수 있다.
+console.log("----------------------")
+for ( const value of array ){
+    console.log(value);
+}
+
