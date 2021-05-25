@@ -183,7 +183,14 @@ pellie.age = 20;
 console.log(pellie.name)
 
 
+// 참고로 let과 const의 차이는
+// let 변수를 read write 가능하지만 
+// const는 read 만 가능하다는 것이다.
+// 그래서 변수선언시 이 값이 바뀌지 않는다면 const로 선언해서 사용하는 것이 좋다.
 
+// 그리고 primitype 변수의 메모리저장과  object 타입의 메모리 저장방식은 틀리다.
+// 즉 primitive는 직접 메모리에 저정하지만
+// object는 내용이 크므로 참조에 참조로해서 저장이 된다. c에서의 포인터를 생각하면 되겠다.
 
 
 
