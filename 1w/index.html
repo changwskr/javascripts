@@ -4,7 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="main.js"></script>
+    <script async src="main.js"></script>
   </head>
   <body></body>
 </html>
+
+<!--
+자바스크립터는 위에서 아래로 파싱하면서 DOM으로 변경한다.
+이때 만약 SRC를 만나면 현재의 디렉토리에서 없다면 서버에서 다운로드 받게 된다.
+파일이 크면 다운로드시 시간이 많이 걸릴것이다.
+그럼 이런 문제를 해결하기 위해서
+Async를 선언해주게 된다.
+Async를 선언하면 html 파싱과 소스 다운로드를 비동기형식으로 동시에 진행할 수가 있다.
+<script async src=main.js>
+이렇게 선언해 주면 된다.
+하지만 병렬로 진행했을때의 문제는 html이 파싱되기도 전에 자바스크립터가 실행될수 있기 때문에 이문제를 해결할 필요가 있다.
+그래서 나온 옵션이 defer이다.
+<script defer src=main.js> 라고 선언하면
+이 옵션은 먼저 해당되는 스크립터를 일단 다운로드 받아두고 html를 다 파싱이후 스크립터를 싱행하게 된다.
+즉 사용자에게는 해당되는 페이지를 먼저보여주고 이 작업이 끝나면 자바스크립터가 실행된다.
+
+<script defer src=main1.js>
+<script defer src=main2.js>
+<script defer src=main3.js>
+이라고 선언하면 해당 html이 실행되고 난이후 자바스크립터도 해당 순서되로 실행되는 것을 보장할 수 있다. 1 2 3 순으로
+
+결론적으로
+자바스크립터는 head 태그내에서 defer옵션과 같이해서 쓰는 것이 가장 안전하다.
+-->
+
