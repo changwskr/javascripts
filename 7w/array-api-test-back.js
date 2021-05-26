@@ -177,6 +177,8 @@ console.log(result9 / students8.length);
     const result1 = students8.map( student => student.score ).join();
     console.log(result1);
 
+
+    // 함수형 프로그램이 된다.
     // 점수가 43점이상인 학생들만 출력
     const result2 = students8
     .map( (student) => student.score ) // 점수만을 배얼로 저장 [ 41, 42, 43, 44 ]
@@ -184,5 +186,24 @@ console.log(result9 / students8.length);
     .join();  // 저장된 배열을 스트링으로 변화
 
     console.log(result2);
+
+}
+
+// 학생들의 점수를 오름차순으로 정렬하여 스트링으로 변환하는 것
+{
+    console.log('3 ------------------')
+    const students = [ new Student('A',29,true,47),
+                    new Student('B',28,false,42),
+                    new Student('C',30,true,48),
+                    new Student('D',10,false,44) 
+                ];   
+
+    const result = students
+    .map(student => student.score)
+    .sort()
+    .join();
+
+    console.log(result);
+
 
 }
