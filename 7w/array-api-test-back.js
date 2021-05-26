@@ -202,8 +202,12 @@ console.log(result9 / students8.length);
     .map(student => student.score)
     .sort()
     .join();
-
     console.log(result);
 
+    const result2 = students
+    .map(student => student.score)
+    .sort( (a,b) => b-a) // b - a 을 빼라는 말이 아니라 b - a 인 경우는 내림차순으로 정렬하라는 말이다. a - b 인경우는 오름 차순으로 정렬하라는 말이다.
+    .join();
+    console.log(result2);
 
 }
