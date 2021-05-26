@@ -16,6 +16,7 @@ const students = [  new Student('A',29,true,45),
                     new Student('D',10,false,90) 
                 ];   
 
+
 // find a students with the score 90
 const student = findStudent(students)
 if( student === undefined){
@@ -35,6 +36,7 @@ function findStudent (objs) {
     }
     return undefined;    
 }
+
 
 //-------------------------------------------------------------------------------
 // 1. 점수가 90점이상인 학생을 찾아라
@@ -60,6 +62,7 @@ function findArray(arrays,score){
 // 2. 등록한 학생물 등록된 학생만 찾아서 배열로 만들어라
 // 배열의 필터기능을 이용하자
 const arr = new Array();
+
 
 console.log("-------------------------")
 // filter(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any): T[];
@@ -116,6 +119,7 @@ const result7 = students7.every( function(student){
 // const result8 = students8.every( (student) => student.score < 50 );
 console.log(result7)
 
+
 // 5. 학생들의 평균점수를 구하라
 console.log("-------------------------8")
 const students8 = [ new Student('A',29,true,41),
@@ -158,4 +162,27 @@ const result8 = students8.reduce( (pstudent,cstudent) => {
     return pstudent + cstudent.score;
 }, 0);
 
-console.log(result8)
+// arrow function 간략화
+const result9 = students8.reduce( (pstudent,cstudent) => pstudent + cstudent.score, 0);
+console.log(result9 / students8.length);
+
+
+// 10. 학생들의 모든점술르 스트링으로 변환하라
+{
+    console.log('-222------------------')
+    const result = students8.map( student => student.score );
+    console.log(result);
+
+    // join 함수를 이용하게 되면 나온 배열값이 스트링으로 저장된다.
+    const result1 = students8.map( student => student.score ).join();
+    console.log(result1);
+
+    // 점수가 43점이상인 학생들만 출력
+    const result2 = students8
+    .map( (student) => student.score ) // 점수만을 배얼로 저장 [ 41, 42, 43, 44 ]
+    .filter( (score) => score >= 43) // 배열점수에서 점수가 43이상인 애들 저장 [ 43, 44 ]
+    .join();  // 저장된 배열을 스트링으로 변화
+
+    console.log(result2);
+
+}
