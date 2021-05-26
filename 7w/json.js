@@ -125,3 +125,10 @@ console.log(json);
     console.log(obj2.birthDate.getDate());
     
 }
+
+//========================================================================================================
+// 유용한 사이트:
+// JSON Diff checker: http://www.jsondiff.com/ -- 두개의 json 파일의 차이점을 확인할때 유용
+// JSON Beautifier/editor: https://jsonbeautifier.org/ -- 망가진 json 포맷파일을 정렬시켜준다.
+// JSON Parser: https://jsonparser.org/ -- json 타입을 object 화시켜서 보고 싶은 경우 사용.
+// JSON Validator: https://tools.learningcontainer.com/json-validator/ -- json 타입이 정상적인지 확인할수 있다.
