@@ -42,6 +42,7 @@
     // 여기서 부터 실행해 보자
     getHen()
     .then( hen   => getEgg(hen) ) //닭을 가지고 달걀을 만들어라
+    .catch( error => resolve('break') ) //닭을 가지고 오다 예외를 만난 경우
     .then( egg   => cook(egg))
     .then( value => {console.log(value)} ); // 에그를 가지고 요리를 해라
 
